@@ -53,7 +53,7 @@ func main() {
 		}(address)
 	}
 
-	// Print responses
+	// Print all the responses
 	for i := 0; i < len(data); i++ {
 		fmt.Println(<-c)
 	}
