@@ -1,0 +1,16 @@
+name: "Release Slack"
+on:
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
+  release:
+    types: [published]
+
+jobs:
+  release-slack:
+    name: release-slack
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Event
+        env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
